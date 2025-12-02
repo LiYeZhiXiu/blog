@@ -1,0 +1,12 @@
+// 鼠标跟随小点点样式
+.mouse-trail-dot {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+  // 防止在移动设备上产生过多点点
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

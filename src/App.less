@@ -1,0 +1,122 @@
+div,
+html,
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 全局布局样式 */
+.blog-container {
+  // min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.content-wrapper {
+  display: flex;
+  max-width: 1080px;
+  margin: 15px auto;
+  // padding: 20px;
+  gap: 20px;
+  /* 增加侧边栏与主内容的间距 */
+  position: relative;
+}
+
+/* 侧边栏容器 */
+.sidebar-container {
+  width: 280px;
+  position: sticky;
+  flex-shrink: 0;
+}
+
+/* 主内容区域 */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  /* 确保主内容区域宽度减去侧边栏宽度并有足够间距 */
+  max-width: calc(100% - 300px);
+  /* 侧边栏宽度 + 间距 */
+  padding: 0;
+}
+
+/* 加载状态样式 */
+.loading {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* 文章详情页面的特殊样式 */
+.main-content:has(.article-detail) {
+  padding: 0px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 分页组件样式 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination .page-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}

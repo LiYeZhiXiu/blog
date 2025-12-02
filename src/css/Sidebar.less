@@ -1,0 +1,414 @@
+// 导入颜色变量，确保可以使用@color-blue等变量
+@import '../styles/variables.less';
+
+/* 侧边栏基础样式 */
+.sidebar {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  // margin-bottom: 20px;
+  position: relative;
+}
+
+.sidebar-content {
+  padding: 0;
+  position: relative;
+  height: 100%;
+  overflow: visible;
+  /* 确保sticky元素有足够的滚动空间 */
+  // min-height: 200vh;
+}
+
+/* 悬浮效果 */
+.sidebar-fixed {
+  position: sticky;
+  top: 75px;
+  left: calc((100% - 1200px) / 2);
+  z-index: 100;
+  background-color: @sidebar-bg;
+  animation: slideIn 0.3s ease;
+}
+
+/* 当div移动到距顶部70px时悬浮 */
+.sticky_layout {
+  position: sticky;
+  top: 75px;
+  min-height: 100px;
+  z-index: 50;
+  width: 100%;
+  /* 确保sticky定位不受父元素影响 */
+  display: block;
+  clear: both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 用户信息区域 */
+.user-profile {
+  text-align: center;
+  padding: 24px 20px;
+  margin-bottom: 0;
+  border-bottom: none;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.sidebar-item {
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.username {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-bio {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: #666;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: @color-blue;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 侧边栏区块 */
+.sidebar-section {
+  margin-bottom: 0;
+  padding: 20px 0px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.section-title {
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 分类列表 */
+.category-list {
+  list-style: none;
+  margin: 0;
+}
+
+.category-list li {
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 16px 5px 12px;
+  border-left: 12px solid transparent;
+  transition: all .28s ease;
+
+  &:hover {
+    color: #1890ff;
+    border-left: 2px solid #3dd9b6;
+  }
+
+  &.active {
+    color: #1890ff;
+    border-left: 2px solid #3dd9b6;
+  }
+}
+
+.category-count {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* 导航图标 */
+.nav-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0px;
+  // background: #f8f8f8;
+  border-radius: 6px;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
+
+  &:hover {
+    background: #1890ff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  }
+}
+
+.nav-icon svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+/* 目录样式 */
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.toc-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toc-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.toc-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.toc-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+  line-height: 1.4;
+
+  &.highlighted {
+    color: #1890ff;
+    font-weight: 500;
+  }
+}
+
+.toc-link {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.active {
+    color: #1890ff;
+    font-weight: 500;
+    // background: #e6f7ff;
+    // padding-left: 8px;
+    // padding-right: 8px;
+  }
+}
+
+.toc-link:hover {
+  color: #1890ff;
+  transform: translateX(-3px);
+}
+
+.toc-link.highlighted {
+  color: #1890ff;
+  font-weight: 500;
+  background: #e6f7ff;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* 目录不同级别标题的缩进 */
+.toc-item.level-1 .toc-link {
+  font-weight: 600;
+  color: #333;
+  padding-left: 0;
+}
+
+.toc-item.level-2 .toc-link {
+  padding-left: 20px;
+  font-size: 12.5px;
+}
+
+.toc-item.level-3 .toc-link {
+  padding-left: 30px;
+  font-size: 12px;
+
+  &:hover,
+  &.active {
+    color: #1890ff;
+    transform: translateX(-3px);
+  }
+}
+
+.toc-item.level-4 .toc-link {
+  padding-left: 40px;
+  font-size: 11px;
+  color: #888;
+
+  &:hover,
+  &.active {
+    color: #1890ff;
+    transform: translateX(-3px);
+  }
+}
+
+.toc-item.level-5 .toc-link {
+  padding-left: 50px;
+  font-size: 11px;
+  color: #888;
+
+  &:hover,
+  &.active {
+    color: #1890ff;
+    transform: translateX(-3px);
+  }
+}
+
+.toc-item.level-6 .toc-link {
+  padding-left: 60px;
+  font-size: 10px;
+  color: #888;
+
+  &:hover,
+  &.active {
+    color: #1890ff;
+    transform: translateX(-3px);
+  }
+}
+
+/* 当前活跃的目录项 */
+.toc-item.active .toc-link {
+  color: #1890ff;
+  font-weight: 500;
+  background: #e6f7ff;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* 目录层级交互样式 */
+.toc-item-wrapper {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background: #f5f5f5;
+    border-left: 2px solid #3dd9b6;
+  }
+}
+
+.toggle-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+/* 子分类默认是可见的，但只有在父分类展开时才会被渲染到DOM中 */
+.child-category {
+  /* 不再需要默认隐藏，因为React组件已经在父分类未展开时不渲染子分类 */
+}
+
+/* 父分类展开状态的样式 */
+.parent-category.active .toggle-icon {
+  transform: rotate(90deg);
+  color: #1890ff;
+}
+
+/* 修复父分类展开时的样式问题 */
+.parent-category.active {
+  margin-bottom: 8px;
+}
+
+/* 点击父分类展开/折叠子分类的交互 */
+.parent-category .toc-link {
+  cursor: pointer;
+}
+
+/* 父分类激活时的特殊样式 */
+.parent-category.active .toc-link {
+  background: #e6f7ff;
+  color: #1890ff;
+}

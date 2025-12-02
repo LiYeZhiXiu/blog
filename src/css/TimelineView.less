@@ -1,0 +1,98 @@
+@import '../styles/variables.less';
+
+/* TimelineView组件样式 */
+.timeline-view {
+  padding: 20px 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.timeline-year-group {
+  margin-bottom: 30px;
+}
+
+.timeline-year {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+// 新样式
+.timenode {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    background: rgba(61, 217, 182, .5);
+    width: 2px;
+    left: 7px;
+    margin-left: 12px;
+  }
+
+  &::before {
+    top: 0;
+    height: 6px;
+  }
+
+  &::after {
+    top: 26px;
+    height: calc(100% - 26px);
+  }
+}
+
+.timenode .meta {
+  padding: 6px 0;
+  line-height: 1.5;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  font-size: .9375rem;
+  font-weight: 500;
+  border-radius: 2px;
+  color: @timeline-meta;
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    z-index: 2;
+  }
+
+  &::after {
+    background: @timeline-node;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    transform: scale(.5);
+    margin-left: 14px;
+  }
+}
+
+.timenode .meta time {
+  margin-left: 34px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.timenode:hover .meta {
+  background-color: #ededed;
+  color: #252323;
+
+  &::after {
+    background: @timeline-node-hover;
+    transform: scale(1);
+  }
+}

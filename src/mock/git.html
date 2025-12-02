@@ -1,0 +1,58 @@
+<h2>一.安装环境</h2>
+<h3>1.本机系统：Windows 10(64位)</h3>
+<h3>2.git：2.34.1(64位)</h3>
+<h2>二.下载路径 <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></h2>
+<h2>三.开始安装</h2>
+<h3>1.选定自己下载的版本 </h3>
+<h3>2.下载成功后，双击"Git-2.34.1-64.exe",开始安装git </h3>
+<h3>3.点击【Next】按钮</h3>
+<h3>4.点击【Next】按钮</h3>
+<h3>5.点击【Install】按钮</h3>
+<h3>6.点击【Finish】按钮</h3>
+<h3>7.查看git是否安装成功</h3>
+<pre><code>git --version</code></pre>
+<h2>四.git使用</h2>
+<h3>1.设置用户名及邮件</h3>
+<pre><code>
+        git config --global user.name "yourname"
+        git config --global user.email "youremail"
+        git config -l
+    </code></pre>
+<h3> 2.将本地的master分支推送到origin主机</h3>
+<pre><code>
+        git push -u origin master
+    </code></pre>
+<h3> 3.从远程获取代码并合并本地的版本</h3>
+<pre><code>
+        git pull origin blogMaster
+    </code></pre>
+<h3> 4.允许不相关的历史记录</h3>
+<pre><code>
+        git pull origin blogMaster --allow-unrelated-histories
+    </code></pre>
+<h3> 5.把github项目克隆到本地文件夹中</h3>
+<pre><code>
+        git clone https://github.com/LiYeZhiXiu/LiYeZhiXiu.github.io.git
+    </code></pre>
+<h3> 6.如果报OpenSSl SSL_read:Connection was reset,errno 1054</h3>
+<pre><code>
+        git config --global http.sslVerify "false"
+    </code></pre>
+<h3> 7.添加ssh key</h3>
+<pre><code>
+        ssh-keygen -t rsa -C "github邮箱"
+    </code></pre>
+<h3> 8.检测ssh是否添加成功</h3>
+<pre><code>
+        ssh -T git@github.com
+    </code></pre>
+<h3> 9.把本地项目上传到GitHub中</h3>
+<pre>
+    <code>
+        git init
+        git add .
+        git commit -m "xxx"
+        git remote add origin https://github.com/LiYeZhiXiu/text11122.git
+        git push -u origin master
+    </code>
+</pre>
