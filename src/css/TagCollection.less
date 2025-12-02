@@ -1,0 +1,68 @@
+@import '../styles/variables.less';
+
+/* TagCollection组件样式 */
+.tag-collection {
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+
+    h2 {
+        padding-bottom: .2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+    }
+
+    .all-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: baseline;
+        text-align: center;
+
+        .tag-list {
+            margin: 0 -8px;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            .tag-list-item {
+                list-style: none;
+                margin: 8px;
+                border-radius: 4px;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+                font-size: .9375rem;
+
+                .tag-list-link {
+                    display: inline-block;
+                    color: @tag-color-list;
+                    padding: 4px 52px 4px 16px;
+                    background: @tag-color-block;
+                    font-weight: 500;
+                    text-decoration: none;
+                    font-family: system-ui;
+
+                    &:hover {
+                        background: @tag-color-block-hover;
+                        color: #fff;
+                    }
+                }
+
+                .tag-list-count {
+                    color: #888;
+                    background: #fff;
+                    padding: 2px 8px;
+                    border-radius: 2px;
+                    pointer-events: none;
+                    position: absolute;
+                    right: 2px;
+                    top: 2px;
+                    height: calc(100% - 4px);
+                }
+            }
+        }
+    }
+}
