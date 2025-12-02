@@ -172,7 +172,7 @@ export const articles: Article[] = [
 </code></pre>
 <h3>5.重新执行hexo d,如果报之前错，就重复以上命令</h3>
 <h3>6.到GitHub上看是否上传成功</h3>
-<h3>7.在地址栏中输入yourname.github.io,结果如下</h3>
+<h3>7.在地址栏中输入yourname.github.io,结果如下1</h3>
 `,
     category: 'hexo',
     tags: ['hexo'],
