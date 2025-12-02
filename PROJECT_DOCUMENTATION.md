@@ -300,5 +300,17 @@ interface Article {
 4. 推送到分支：`git push origin feature/AmazingFeature`
 5. 提交 Pull Request
 
+## 19. 许可证
+
+MIT License
+
+## 20. 联系方式
+
+如有问题或建议，请通过以下方式联系：
+- 项目地址：[GitHub Repository]
+- 邮箱：[your-email@example.com]
+
+---
+
 **更新时间**：2025-12-01
 **版本**：v0.0.0
